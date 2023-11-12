@@ -7,10 +7,10 @@ function generatePassword() {
   var criteria1 = prompt ("Number of Characters? (8-128) ");
   
     if (criteria1>128) {
-      alert("Invalid Entry");
+      alert("Number of Characters Cannot be Greater Than 128.");
       return(null);
       } else if (criteria1<8) {
-      alert("Invalid Entry");
+      alert("Number of Characters Cannot be Less Than 8.");
       return(null);
       };
 
@@ -18,7 +18,7 @@ function generatePassword() {
   var criteria2 = up2.toUpperCase();
 
     if (criteria2!="Y" && criteria2!="N") {
-      alert("Invalid Entry");
+      alert("Must Select Y or N.");
       return(null);
     };
 
@@ -26,7 +26,7 @@ function generatePassword() {
     var criteria3 = up3.toUpperCase();
 
     if (criteria3!="Y" && criteria3!="N") {
-      alert("Invalid Entry");
+      alert("Must Select Y or N.");
       return(null);
     };
 
@@ -34,7 +34,7 @@ function generatePassword() {
     var criteria4 = up4.toUpperCase();
 
     if (criteria4!="Y" && criteria4!="N") {
-      alert("Invalid Entry");
+      alert("Must Select Y or N.");
       return(null);
     };
 
@@ -42,11 +42,12 @@ function generatePassword() {
     var criteria5 = up5.toUpperCase();
 
     if (criteria5!="Y" && criteria5!="N") {
-      alert("Invalid Entry");
+      alert("Must Select Y or N.");
       return(null);
     };
 
-    var validate = prompt ("You Have Selected: Number of Characters " + criteria1 + ", Lowercase Letters (" + criteria2 + "), Uppercase Letters (" + criteria3 + "), Numbers (" + criteria4 + "), Special Characters (" + criteria5 + ").  If this is correct and you would like your random password generated, type Y. If this is incorrect and you would like to restart, type N. Press Cancel to quit.");
+    var upV = prompt ("You Have Selected: Number of Characters " + criteria1 + ", Lowercase Letters (" + criteria2 + "), Uppercase Letters (" + criteria3 + "), Numbers (" + criteria4 + "), Special Characters (" + criteria5 + ").  If this is correct and you would like your random password generated, type Y. If this is incorrect and you would like to restart, type N. Press Cancel to quit.");
+    var validate = upV.toUpperCase();
 
     if (validate=="N") {
        generatePassword();
