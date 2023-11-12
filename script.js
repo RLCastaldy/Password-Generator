@@ -14,28 +14,32 @@ function generatePassword() {
       return(null);
       };
 
-  var criteria2 = prompt ("Include Lowercase Letters? (Y/N)");
+  var up2 = prompt ("Include Lowercase Letters? (Y/N)");
+  var criteria2 = up2.toUpperCase();
 
     if (criteria2!="Y" && criteria2!="N") {
       alert("Invalid Entry");
       return(null);
     };
 
-    var criteria3 = prompt ("Include Uppercase Letters? (Y/N)");
+    var up3 = prompt ("Include Uppercase Letters? (Y/N)");
+    var criteria3 = up3.toUpperCase();
 
     if (criteria3!="Y" && criteria3!="N") {
       alert("Invalid Entry");
       return(null);
     };
 
-    var criteria4 = prompt ("Include Numbers? (Y/N)");
+    var up4 = prompt ("Include Numbers? (Y/N)");
+    var criteria4 = up4.toUpperCase();
 
     if (criteria4!="Y" && criteria4!="N") {
       alert("Invalid Entry");
       return(null);
     };
 
-    var criteria5 = prompt ("Include Special Characters? (Y/N)");
+    var up5 = prompt ("Include Special Characters? (Y/N)");
+    var criteria5 = up5.toUpperCase();
 
     if (criteria5!="Y" && criteria5!="N") {
       alert("Invalid Entry");
