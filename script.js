@@ -42,13 +42,17 @@ function generatePassword() {
       return(null);
     };
 
-    var validate = prompt ("You Have Selected: Number of Characters " + criteria1 + ", Lowercase Letters (" + criteria2 + "), Uppercase Letters (" + criteria3 + "), Numbers (" + criteria4 + "), Special Characters (" + criteria5 + ").  Is this correct? (Y/N)");
+    var validate = prompt ("You Have Selected: Number of Characters " + criteria1 + ", Lowercase Letters (" + criteria2 + "), Uppercase Letters (" + criteria3 + "), Numbers (" + criteria4 + "), Special Characters (" + criteria5 + ").  If this is correct and you would like your random password generated, type Y. If this is incorrect and you would like to restart, type N. Press Cancel to quit.");
 
-    //if (validate ="N") {
-      //function generatePassword();
-    //}; else if (validate ="Y"){
-      //function writePassword();
-    //};
+    if (validate=="N") {
+       generatePassword();
+    } else if (validate=="Y" && criteria2=="N" && criteria3=="N" && criteria4=="N" && criteria5=="N") {
+      alert ("Must Select At Least One Type of Character.");
+      return(null);
+    } else if (validate=="Y" || criteria2=="Y" || criteria3=="Y" || criteria4=="Y" || criteria5=="Y") {
+      //writePassword();
+    }  
+
 
 }
 
