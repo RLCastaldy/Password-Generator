@@ -35,7 +35,7 @@ function generatePassword() {
       alert("Must Select Y or N.");
       return(null); 
     } else if (criteria2=="Y") {
-      possibleCharacters.concat(lowCase,lowEnsure);
+      possibleCharacters=possibleCharacters.concat(lowCase,lowEnsure);
       };
 
     var up3 = prompt ("Include Uppercase Letters? (Y/N)");
@@ -45,7 +45,7 @@ function generatePassword() {
       alert("Must Select Y or N.");
       return(null);
       } else if (criteria3=="Y") {
-        possibleCharacters.concat(upCase,upEnsure);
+        possibleCharacters=possibleCharacters.concat(upCase,upEnsure);
         };
 
     var up4 = prompt ("Include Numbers? (Y/N)");
@@ -55,7 +55,7 @@ function generatePassword() {
       alert("Must Select Y or N.");
       return(null);
     } else if (criteria4=="Y") {
-      possibleCharacters.concat(numbers,numberEnsure);
+      possibleCharacters=possibleCharacters.concat(numbers,numberEnsure);
       };
 
     var up5 = prompt ("Include Special Characters? (Y/N)");
@@ -65,7 +65,7 @@ function generatePassword() {
       alert("Must Select Y or N.");
       return(null);
     } else if (criteria5=="Y") {
-      possibleCharacters.concat(special,specialEnsure);
+      possibleCharacters=possibleCharacters.concat(special,specialEnsure);
       };
 
     var upV = prompt ("You Have Selected: Number of Characters " + criteria1 + ", Lowercase Letters (" + criteria2 + "), Uppercase Letters (" + criteria3 + "), Numbers (" + criteria4 + "), Special Characters (" + criteria5 + ").  If this is correct and you would like your random password generated, type Y. If this is incorrect and you would like to restart, type N. Press Cancel to quit.");
@@ -78,7 +78,7 @@ function generatePassword() {
       return(null);
 
     } else if (validate=="Y" || criteria2=="Y" || criteria3=="Y" || criteria4=="Y" || criteria5=="Y") {
-      console.log(possibleCharacters + guaranteedCharacters + 1);
+      console.log(possibleCharacters + guaranteedCharacters);
     }  
 
 }
