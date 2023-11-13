@@ -18,7 +18,7 @@ function generatePassword() {
   var possibleCharacters = [];
   var guaranteedCharacters = [];
 
-  var criteria1 = prompt ("Number of Characters? (8-128) ");
+  var criteria1 = Number(prompt("Number of Characters? (8-128) "));
   
     if (criteria1>128) {
       alert("Number of Characters Cannot be Greater Than 128.");
@@ -76,10 +76,11 @@ function generatePassword() {
     } else if (validate=="Y" && criteria2=="N" && criteria3=="N" && criteria4=="N" && criteria5=="N") {
       alert ("Must Select At Least One Type of Character.");
       return(null);
-
     } else if (validate=="Y" || criteria2=="Y" || criteria3=="Y" || criteria4=="Y" || criteria5=="Y") {
-      console.log(possibleCharacters + guaranteedCharacters);
-    }  
+      for(let i=0;i<criteria1;i++) {
+        console.log(i);
+    }
+  }  
 
 }
 
