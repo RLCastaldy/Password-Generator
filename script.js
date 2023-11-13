@@ -4,6 +4,20 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 
 function generatePassword() {
+
+  const lowCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  const upCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  const numbers = [0,1,2,3,4,5,6,7,8,9];
+  const special = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","}","[","]","|","/","'","<",",",">",".","?"];
+
+  const lowEnsure = ["j"]
+  const upEnsure = ["N"]
+  const numberEnsure = [6]
+  const specialEnsure = [">"]
+
+  var possibleCharacters = [];
+  var guaranteedCharacters = [];
+
   var criteria1 = prompt ("Number of Characters? (8-128) ");
   
     if (criteria1>128) {
@@ -19,8 +33,10 @@ function generatePassword() {
 
     if (criteria2!="Y" && criteria2!="N") {
       alert("Must Select Y or N.");
-      return(null);
-    };
+      return(null); 
+    } else if (criteria2=="Y") {
+      possibleCharacters.concat(lowCase,lowEnsure);
+      };
 
     var up3 = prompt ("Include Uppercase Letters? (Y/N)");
     var criteria3 = up3.toUpperCase();
@@ -28,7 +44,9 @@ function generatePassword() {
     if (criteria3!="Y" && criteria3!="N") {
       alert("Must Select Y or N.");
       return(null);
-    };
+      } else if (criteria3=="Y") {
+        possibleCharacters.concat(upCase,upEnsure);
+        };
 
     var up4 = prompt ("Include Numbers? (Y/N)");
     var criteria4 = up4.toUpperCase();
@@ -36,7 +54,9 @@ function generatePassword() {
     if (criteria4!="Y" && criteria4!="N") {
       alert("Must Select Y or N.");
       return(null);
-    };
+    } else if (criteria4=="Y") {
+      possibleCharacters.concat(numbers,numberEnsure);
+      };
 
     var up5 = prompt ("Include Special Characters? (Y/N)");
     var criteria5 = up5.toUpperCase();
@@ -44,7 +64,9 @@ function generatePassword() {
     if (criteria5!="Y" && criteria5!="N") {
       alert("Must Select Y or N.");
       return(null);
-    };
+    } else if (criteria5=="Y") {
+      possibleCharacters.concat(special,specialEnsure);
+      };
 
     var upV = prompt ("You Have Selected: Number of Characters " + criteria1 + ", Lowercase Letters (" + criteria2 + "), Uppercase Letters (" + criteria3 + "), Numbers (" + criteria4 + "), Special Characters (" + criteria5 + ").  If this is correct and you would like your random password generated, type Y. If this is incorrect and you would like to restart, type N. Press Cancel to quit.");
     var validate = upV.toUpperCase();
@@ -54,10 +76,10 @@ function generatePassword() {
     } else if (validate=="Y" && criteria2=="N" && criteria3=="N" && criteria4=="N" && criteria5=="N") {
       alert ("Must Select At Least One Type of Character.");
       return(null);
-    } else if (validate=="Y" || criteria2=="Y" || criteria3=="Y" || criteria4=="Y" || criteria5=="Y") {
-      //writePassword();
-    }  
 
+    } else if (validate=="Y" || criteria2=="Y" || criteria3=="Y" || criteria4=="Y" || criteria5=="Y") {
+      console.log(possibleCharacters + guaranteedCharacters + 1);
+    }  
 
 }
 
