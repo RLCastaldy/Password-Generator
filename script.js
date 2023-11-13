@@ -78,8 +78,12 @@ function generatePassword() {
       return(null);
     } else if (validate=="Y" || criteria2=="Y" || criteria3=="Y" || criteria4=="Y" || criteria5=="Y") {
       for(let i=0;i<criteria1;i++) {
-        console.log(i);
-    }
+        var count = 0;
+        for (var j=0; j<Math.floor(Math.random()*criteria1);j++) {
+          count++;
+        }
+        console.log(count);
+      }
   }  
 
 }
