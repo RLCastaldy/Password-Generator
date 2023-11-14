@@ -38,7 +38,7 @@ function generatePassword() {
   let password = "";
   for (let i=0;i<criteria1;i++) {
     const randomIndex = Math.floor(Math.random() * possibleCharacters.length);
-    password += possibleCharacters.charAt(randomIndex);
+    password += possibleCharacters[randomIndex];
   }
 
   return password;
