@@ -1,5 +1,7 @@
-# m3c
+# Password Generator
 Module 3 Challenge
+
+Deployed Webpage: https://rlcastaldy.github.io/Password-Generator/
 
 ## User Story
 
